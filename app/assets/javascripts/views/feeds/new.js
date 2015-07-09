@@ -12,6 +12,8 @@ NewsReader.Views.NewFeedView = Backbone.View.extend({
     },
 
     create: function(event) {
+      event.preventDefault();
+
       var formData = $(event.currentTarget).serializeJSON();
       var newFeed = new NewsReader.Models.Feed();
       newFeed.save(formData, {
