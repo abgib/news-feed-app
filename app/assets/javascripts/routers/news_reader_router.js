@@ -10,7 +10,14 @@ NewsReader.Routers.NewsReaderRouter = Backbone.Router.extend({
   index: function(){
     var indexView = new NewsReader.Views.IndexView({collection: this.feeds})
     indexView.collection.fetch();
-    $("#content").append(indexView.render().$el);
+    this._swapView(indexView);
+    // $("#content").append(indexView.render().$el);
+  },
+
+  _swapView: function(newView) {
+    this._currentView && this._currentView.remove();
+    this._currentView = newView;
+    $("#content").html(this._currentView.render().$el);
   }
 
 })
