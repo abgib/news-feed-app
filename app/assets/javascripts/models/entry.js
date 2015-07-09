@@ -1,3 +1,2 @@
-NewsReader.Models.Entry = Backbone.Model.extent({
-  url: 
+NewsReader.Models.Entry = Backbone.Model.extend({
 })
