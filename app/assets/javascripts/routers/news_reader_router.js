@@ -15,7 +15,13 @@ NewsReader.Routers.NewsReaderRouter = Backbone.Router.extend({
   },
 
   show: function(id) {
-    alert("show me the feed" + id)
+    var feed = this.feeds.get(id);
+    feed.fetch({success: function() {
+      debugger
+      var showView = new NewsReader.Views.FeedsShowView({ model: feed });
+      this._swapView(showView);
+      }.bind(this)
+    });
   },
 
   _swapView: function(newView) {
@@ -23,5 +29,4 @@ NewsReader.Routers.NewsReaderRouter = Backbone.Router.extend({
     this._currentView = newView;
     $("#content").html(this._currentView.render().$el);
   }
-
 })
