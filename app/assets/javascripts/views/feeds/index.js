@@ -3,10 +3,10 @@ NewsReader.Views.IndexView = Backbone.View.extend({
     this.listenTo(this.collection, "sync", this.render)
   },
 
-  render: function() {
-    var content = JST["feeds/index"];
+  template: JST["feeds/index"],
 
-    this.$el.html(content)
+  render: function() {
+    this.$el.html(this.template());
 
     this.collection.each(function(feed){
       var indexItemView = new NewsReader.Views.FeedListItemView({model: feed});

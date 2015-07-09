@@ -3,9 +3,10 @@ NewsReader.Views.FeedListItemView = Backbone.View.extend({
 
   className: "feed-list-item",
 
+  template: JST["feeds/feed_list_item"],
+
   render: function(){
-    var content = JST["feeds/feed_list_item"]({ listItem: this.model });
-    this.$el.html(content);
+    this.$el.html(this.template({ listItem: this.model }));
     return this;
   }
 });
