@@ -26,7 +26,7 @@ NewsReader.Views.IndexView = Backbone.View.extend({
       subView.remove()
     });
 
-    this.subViews() = [];
+    this._subViews = [];
     Backbone.View.prototype.remove.call(this);
   },
 

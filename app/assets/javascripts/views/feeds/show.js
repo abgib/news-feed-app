@@ -32,7 +32,7 @@ NewsReader.Views.FeedsShowView = Backbone.View.extend({
       subView.remove();
     });
 
-    this.subViews() = [];
+    this._subViews = [];
   },
 
   subViews: function(){
