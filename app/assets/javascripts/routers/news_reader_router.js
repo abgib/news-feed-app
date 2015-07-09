@@ -9,6 +9,7 @@ NewsReader.Routers.NewsReaderRouter = Backbone.Router.extend({
 
   index: function(){
     var indexView = new NewsReader.Views.IndexView({collection: this.feeds})
+    indexView.collection.fetch();
     indexView.render();
     $("#content").append(indexView.$el);
   }

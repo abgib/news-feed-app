@@ -1,7 +1,6 @@
 NewsReader.Views.IndexView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo(this.collection, "sync", this.render),
-    this.collection.fetch();
+    this.listenTo(this.collection, "sync", this.render)
   },
 
   render: function() {
