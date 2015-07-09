@@ -44,6 +44,6 @@ class Feed < ActiveRecord::Base
       self.reload
     end
 
-    self.entries
+    self.entries.order(published_at: :desc)
   end
 end

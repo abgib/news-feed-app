@@ -4,16 +4,6 @@
 
 <ul>
   <% feed.entries().each(function(entry){%>
-    <li>
-      <p>
-        <%= entry.escape("title") %>
-      </p>
-      <p>
-        <%= entry.escape("link") %>
-      </p>
-      <p>
-        <%= entry.escape("published_at") %>
-      </p>
-    </li>
+    <li><%= entry.escape("title") %></li>
   <% }) %>
 </ul>
