@@ -19,6 +19,8 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'byebug'
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0', require: "bcrypt"
