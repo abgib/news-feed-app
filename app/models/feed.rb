@@ -8,7 +8,6 @@ class Feed < ActiveRecord::Base
     return feed if feed
 
     begin
-      debugger
       feed_data = SimpleRSS.parse(open(url))
       feed = Feed.create!(title: feed_data.title, url: url)
       feed_data.entries.each do |entry_data|
