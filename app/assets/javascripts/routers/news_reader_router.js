@@ -4,13 +4,18 @@ NewsReader.Routers.NewsReaderRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index"
+    "": "index",
+    "feeds/:id" : "show"
   },
 
   index: function(){
     var indexView = new NewsReader.Views.IndexView({collection: this.feeds})
     indexView.collection.fetch();
     this._swapView(indexView);
+  },
+
+  show: function(id) {
+    alert("show me the feed" + id)
   },
 
   _swapView: function(newView) {
