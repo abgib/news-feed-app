@@ -2,8 +2,4 @@
 
 <button class="refresh">Refresh</button>
 
-<ul>
-  <% feed.entries().each(function(entry){%>
-    <li><%= entry.escape("title") %></li>
-  <% }) %>
-</ul>
+<ul class="entry-list"></ul>
